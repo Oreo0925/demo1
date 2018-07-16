@@ -1,0 +1,143 @@
+<!doctype html>
+<html ng-app="celefishApp">
+	<head>
+	  <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <title>CeleFish</title>
+	    
+		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="/js/bootstrap-3.3.7/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="/celefish/css/iCheck/custom.css" />
+		<link rel="stylesheet" type="text/css" href="/celefish/css/toastr/toaster.min.css" />
+		
+	    <script src="/js/jquery/jquery-2.1.1.min.js"></script>
+		
+	    <script src="/js/angular/angular.min.js"></script>
+	    <script src="/js/angular/angular-animate.min.js"></script>
+	    <script src="/js/angular/angular-sanitize.min.js"></script>
+	    <script src="/js/angular/angular-route.min.js"></script>
+	    <script src="/js/angular/plugins/ui-bootstrap-tpls-2.5.0.min.js"></script>
+	    <script src="/celefish/js/toastr/toaster.min.js"></script>
+	 
+	    <!-- MODULES -->
+	    <script src="modules/celefishAppServices.js"></script>
+	    <script src="modules/celefishAppDirective.js"></script>
+	    <script src="modules/celefishAppRouter.js"></script>
+	    <script src="modules/celefishAppCore.js"></script>
+	    <script src="celefishApp.js"></script>
+	   
+	    <!-- ServiceImpl -->
+	    <script src="/celefish/service/operationService.js"></script>
+	    <script src="/celefish/service/memberService.js"></script>
+	    <script src="/celefish/service/modalService.js"></script>
+	    <script src="/celefish/service/groupService.js"></script>
+	    <script src="/celefish/service/variableService.js"></script>
+	    <script src="/celefish/js/translate/angular-translate.min.js"></script>
+	    <script src="/celefish/js/translate/angular-translate-loader-static-files.min.js"></script>
+
+		<!-- Controller -->
+	    <script src="/celefish/controller/operationController.js"></script>
+	    <script src="/celefish/controller/paramController.js"></script>
+	    <script src="/celefish/controller/memberController.js"></script>
+	    <script src="/celefish/controller/modalController.js"></script>
+	    <script src="/celefish/controller/groupController.js"></script>
+	    
+	    <!-- Directives -->
+	    <script src="/celefish/directives/iCheck.drct.js"></script>
+	    <link href="/celefish/css/bootstrap-switch.min.css" rel="stylesheet">
+	    
+	    <script src="/celefish/js/bootstrap-switch.js"></script>
+	    <script src="/celefish/js/bsSwitch.js"></script>
+	    <script src="/celefish/js/iCheck/icheck.min.js"></script>
+	    <script src="/celefish/js/dataTables/datatables.min.js"></script>
+	    
+		<script src="/js/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<script src="/js/bootstrap-3.3.7/js/bootstable-custom.js"></script>
+		<script src="/celefish/js/bootstrapSelect/bootstrap-select.js"></script>
+		<script src="/js/fontawesome-5.0.8/fontawesome-all.min.js"></script> 
+		<script src="/js/slimscroll/jquery.slimscroll.min.js"></script>
+		<script src="/js/metisMenu/jquery.metisMenu.js"></script>
+		<script src="/js/inspinia.js"></script>
+		<script src="/js/pace/pace.min.js"></script>
+		<style>
+			.roundBtn {
+				display:block;
+			    width:25px;
+			    height:25px;
+			    border: 1px solid #F8F8FF;
+			    border-radius: 50%;
+			    color:#F8F8FF;
+			    box-shadow: 0 0 3px gray;
+			    /* Transitions */
+				-moz-transition:.1s ease-out;
+				-webkit-transition:.1s ease-out;
+				-o-transition:.1s ease-out;
+				-ms-transition:.1s ease-out;
+				-khtml-transition:.1s ease-out;
+				transition:.1s ease-out;
+				/* Shadows */
+				box-shadow:inset 0 0 5px 0 rgba(255,255,255,0.5);
+				-moz-box-shadow:inset 0 0 5px 0 rgba(255,255,255,0.5);
+				-ms-box-shadow:inset 0 0 5px 0 rgba(255,255,255,0.5);
+				-webkit-box-shadow:inset 0 0 5px 0 rgba(255,255,255,0.5);
+				-khtml-box-shadow:inset 0 0 5px 0 rgba(255,255,255,0.5);
+				-o-box-shadow:inset 0 0 5px 0 rgba(255,255,255,0.5);
+				/* Borders */
+				border-width:1px;
+				border-style:solid;
+				border-left-color:#777;
+				border-right-color:#777;
+				border-top-color:#999;
+				border-bottom:3px solid #555;
+			}
+			.roundBtn:active {
+				margin-top:4px;
+				color:#777;
+				border:1px solid #999;
+				/*{Shadow}*/
+				box-shadow:inset 0 0 5px 0 #333;
+				-moz-box-shadow:inset 0 0 5px 0 #333;
+				-webkit-box-shadow:inset 0 1px 2px 0 #333, 0 1px 1px 0 #fff;
+			}
+			.td {
+				 text-align: center;
+			 	 vertical-align: middle;
+			}
+			.rectangle {
+				width: 10px;
+		    	height: 25px;
+		    	white-space:nowrap;
+		    	margin-bottom: -5px;
+   				margin-top: -7px;
+			}
+			.rectangle2 {
+				width: 10px;
+		    	height: 25px;
+		    	white-space:nowrap;
+		    	margin-right:74px
+			}
+			.inhertText {
+				padding-left:20px;
+				padding-top:1px;
+			}
+		</style>
+	</head>
+	<body class="wrapper wrapper-content">
+        <toaster-container></toaster-container>
+        <span id="appendAlert"></span>
+        <div ng-view></div>
+    </body>
+
+</html>
+<!-- <script>
+$(window).load(function() {
+	$('.table').DataTable({
+		"bPaginate": true,
+		"bInfo": false,
+		"select": false,
+		"searching":false
+	});
+
+});
+</script> -->

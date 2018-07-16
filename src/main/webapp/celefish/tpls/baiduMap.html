@@ -1,0 +1,24 @@
+<!-- <div class="ibox">
+	<div class="ibox-title">
+		<h5>魚塘地圖</h5>
+	</div>
+	<div class="ibox-content">
+		<p>地址：{{deviceGroup.location}}</p>
+		<div set-location></div>
+	</div>
+</div> -->
+
+<div class="lead" style="display: inline!important">魚塘地圖   </div>
+
+<div class="d-inline" style="display: inline!important"> ({{deviceGroup.location}})</div>
+<div set-location></div>
+
+
+<style>
+	.drawBaiduMap {
+	    width: 90%; height: 150px; margin:13px;font-family:"微软雅黑";
+	}
+	.anchorBL {
+		display:none; 
+	}	
+</style>

@@ -1,0 +1,138 @@
+<div class="ibox float-e-margins" ng-controller="dashboardCtrl">
+	<div class="ibox-content">
+		<div class="lead" style="display:block;">数据详情
+			<a type="button" href="/celefish/index.html#!/param" class="btn btn-xs btn-success" style="float: right; margin-left: 10px;margin-top: 10px;">装置参数设定</a>
+			<a type="button" href="/celefish/index.html#!/operation/{{device.id}}" class="btn btn-xs btn-success" style="float: right;margin-top: 10px;">装置控制面板</a>
+		</div>
+		<div class="row">
+			<div class="col-md-6" style="border-right-style: inset;">
+				<p class="col-md-6 no-padding form-control-static">告警时数据 ({{selectEvent.alarmTime | date : "y-MM-dd HH:mm:ss"}})</p>
+				<p class="col-md-6 no-padding form-control-static text-right">告警类型：{{selectEvent.alarmType == 1 ? '数据告警 1' : ''}}{{selectEvent.alarmType == 2 ? '数据告警 2' : ''}}</p>
+				<!-- <span class="col-md-12 m-b-xs gray-bg text-center">
+					<i class="fas fa-flask"></i><span> </span>溶氧值/水温/控制码/增氧机状态
+				</span> -->
+				<div class="row">
+					<div class="col-md-4">
+						<div class="navy-bg text-center" style="border-radius: 15px;">
+                            <span class="m-xs">溶氧</span>
+                            <h3 class="font-bold">{{dissolvedOxygen | number:1}} mg/L</h3>
+	                    </div>
+					</div>
+					<div class="col-md-4">
+						<div class="navy-bg text-center" style="border-radius: 15px;">
+                            <span class="m-xs">温度</span>
+                            <h3 class="font-bold">{{temperature | number:1}} °C</h3>
+	                    </div>
+					</div>
+					<div class="col-md-4">
+						<div class="navy-bg text-center" style="border-radius: 15px;">
+                            <span class="m-xs">pH</span>
+                            <h3 class="font-bold">{{ph | number:1}}</h3>
+	                    </div>
+					</div>
+				</div>
+				<div class="row text-center">
+					<div class="col-md-3">1<br><button class="btn btn-primary btn-circle btn-md" type="button">氧</button></div>
+					<div class="col-md-3">2<br><button class="btn btn btn-circle btn-md" type="button">氧</button></div>
+					<div class="col-md-3">3<br><button class="btn btn-danger btn-circle btn-md" type="button">氧</button></div>
+					<div class="col-md-3">4<br><button class="btn btn-primary btn-circle btn-md" type="button">氧</button></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<p class="no-padding form-control-static">当前数据</p>
+				<div class="row">
+					<!-- <div class="col-md-6 m-b-xs"><a type="button" href="/celefish/index.html#!/param" class="btn btn-xs btn-success btn-block">装置参数设定</a></div>
+					<div class="col-md-6 m-b-xs"><a type="button" href="/celefish/index.html#!/operation/{{device.id}}" class="btn btn-xs btn-success btn-block">装置控制面板</a></div> -->
+					<div class="col-md-4">
+						<div class="navy-bg text-center" style="border-radius: 15px;">
+                            <span class="m-xs">溶氧值</span>
+                            <h3 class="font-bold">{{realTimeData[1] | number:1}} mg/L</h3>
+	                    </div>
+					</div>
+					<div class="col-md-4">
+						<div class="navy-bg text-center" style="border-radius: 15px;">
+                            <span class="m-xs">温度</span>
+                            <h3 class="font-bold">{{realTimeData[2] | number:1}} °C</h3>
+	                    </div>
+					</div>
+					<div class="col-md-4">
+						<div class="navy-bg text-center" style="border-radius: 15px;">
+                            <span class="m-xs">pH</span>
+                            <h3 class="font-bold">0.0</h3>
+	                    </div>
+					</div>
+				</div>
+				<div class="row text-center">
+					<div class="col-md-3">1<br><button class="btn btn-primary btn-circle btn-md" type="button">氧</button></div>
+					<div class="col-md-3">2<br><button class="btn btn btn-circle btn-md" type="button">氧</button></div>
+					<div class="col-md-3">3<br><button class="btn btn-danger btn-circle btn-md" type="button">氧</button></div>
+					<div class="col-md-3">4<br><button class="btn btn-primary btn-circle btn-md" type="button">氧</button></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<ul class="nav nav-tabs">
+				<li ng-class="{'active': dashboardTabFlag.alert}" ng-click="showDashboardTab('alert')"><a>告警时数据</a></li>
+				<li ng-class="{'active': dashboardTabFlag.realTime}"><a ng-click="showDashboardTab('realTime')">历史数据</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="col-md-12 m-t-sm" ng-if="dashboardTabFlag.realTime">
+					<form class="form-horizontal">
+ 						<div class="form-group">
+ 							<div class="col-md-8 no-padding">
+ 								<label class="col-md-2 control-label">起始时间：</label>
+	   							<div class="col-md-3"><input id="startDate" type="text" class="form-control"></div>
+								<label class="col-md-2 control-label">结束时间：</label>
+	   							<div class="col-md-3"><input id="endDate" type="text" class="form-control"></div>
+	   							<button type="button" class="col-md-2 btn btn-default">查询</button>
+							</div>
+							<div class="col-md-4 no-padding text-right">
+								<div class="btn-group">
+									<button type="button" class="btn btn-default">今日</button>
+									<button type="button" class="btn btn-default">近五日</button>
+								</div>
+								<div class="btn-group">
+									<button type="button" class="btn btn-default">溶氧</button>
+									<button type="button" class="btn btn-default">温度</button>
+									<button type="button" class="btn btn-default">pH</button>
+								</div>
+							</div>
+ 						</div>
+ 					</form>
+ 				</div>
+				<div class="col-md-12 echarts" echarts-line-chart></div>
+				<div class="col-md-12 echarts2" ng-controller="dissolvedOxygenCtrl1" echarts-line-chart></div>
+				<div class="col-md-12 echarts2" ng-controller="dissolvedOxygenCtrl2" echarts-line-chart></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	.echarts {
+		height: 400px; width: 100%;
+	}
+	.echarts2 {
+		height: 100px; width: 100%;
+	}
+</style>
+
+<script>
+	$(document).ready(function() {
+		$('#startDate').datepicker({
+			todayBtn : "linked",
+			keyboardNavigation : false,
+			forceParse : false,
+			calendarWeeks : true,
+			autoclose : true
+		});
+
+		$('#endDate').datepicker({
+			todayBtn : "linked",
+			keyboardNavigation : false,
+			forceParse : false,
+			calendarWeeks : true,
+			autoclose : true
+		});
+	});
+</script>

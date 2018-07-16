@@ -1,0 +1,87 @@
+<style>
+	.ibox-content {
+	    padding: 10px 20px 10px 20px;
+	}
+	.ibox-title {
+		padding: 10px 15px 0px;
+	}
+</style>
+<div class="row wrapper border-bottom" style="background-color: #f2f5fa;">
+	<div>
+		<div class="col-lg-4">
+			<h4>
+				坐席编号：A01 (菱湖 合孚區)
+				<!-- <div class="btn-group">
+					<select class="form-control input-sm" ng-model="selectedFishArea" ng-options="x.name for x in fishArea"></select>
+				</div>-->
+			</h4>
+		</div>
+		<div class="col-md-4 text-center">
+			<button class="btn btn-success" type="button" ng-click="notifyEnableFun()">
+				<div ng-show="notifyEnable"><i class="fas fa-play-circle"></i>&nbsp;&nbsp;<span class="bold">开始</span></div>
+				<div ng-show="!notifyEnable"><i class="fas fa-pause-circle"></i>&nbsp;&nbsp;<span class="bold">暂停</span></div>
+			</button>
+		</div>
+		<div class="col-md-4 text-right">
+			<h4 class="col-md-9">
+				值班人：
+				<img alt="image" class="img-circle cf_adm_photo" src="images/a4.jpg" style="width: 25px; height: 25px;">
+				<strong>王五{{member.name}}</strong>
+			</h4>
+			<button class="btn btn-success col-md-3" type="button"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;<span class="bold">换班</span></button>
+		</div>
+	</div>
+</div> 
+
+
+	<div class="col-md-3 no-padding" >
+		<div ng-include="'/celefish/tpls/notifyTask.html'"></div>
+	</div>
+	<div class="col-md-9 no-padding" ng-if="selectEvent" >
+		<div class="ibox-content" style="padding-top: 0px;margin-left: -60px;">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="row">
+						<div class=" col-md-12" ng-include="'/celefish/tpls/area_fishPond2.html'"></div>
+						<div class=" col-md-12" ng-include="'/celefish/tpls/dashboard.html'"></div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="row">
+						<div class="col-md-12" ng-include="'/celefish/tpls/baiduMap.html'"></div>
+						
+						
+						<div class="col-md-12">
+					<div class="ibox float-e-margins">
+						<div class="">
+							<ul class="nav nav-tabs">
+								<li ng-class="{'active': fishRuleTabFlag.questionnaire}" ng-click="showFishRuleTab('questionnaire')"><a>任务处理</a></li>
+								<li ng-class="{'active': fishRuleTabFlag.historyDevice}"><a ng-click="showFishRuleTab('historyDevice')">历史告警纪录</a></li>
+								<li ng-class="{'active': fishRuleTabFlag.maintainRecord}"><a ng-click="showFishRuleTab('maintainRecord')">維護紀錄</a></li>
+							</ul>
+						</div>
+						<div class="ibox-content">
+							<div  class="row">
+								<div class="tab-content">
+									<div class="col-md-12" ng-show="fishRuleTabFlag.questionnaire">
+										<div ng-include="'/celefish/tpls/questionnaire.html'"></div>
+									</div>
+									<div class="col-md-12" ng-show="fishRuleTabFlag.historyDevice">
+										<div ng-include="'/celefish/tpls/historyDeviceNotify.html'"></div>
+									</div>
+									<div class="col-md-12" ng-show="fishRuleTabFlag.maintainRecord">
+										<div ng-include="'/celefish/tpls/maintainRecord.html'"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+

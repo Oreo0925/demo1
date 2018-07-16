@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Big5">
+<style>
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 7px 12px 7px 12px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+<h3>
+親愛的 慶漁塘 用戶，<br/>
+<br/>
+<div>
+	${username} 邀請您註冊 慶漁堂 帳號，點擊下面的按鈕即可前往註冊頁面：<br/>
+	<form action="$link">
+    	<input class="btn" type="submit" value="確認"/>
+	</form>
+	本郵件是系統自動發送，請勿直接回覆！<br/>
+	<br/>
+	-慶漁堂 團隊
+	<br/>
+</div>
+</h3>
+</body>
+</html>

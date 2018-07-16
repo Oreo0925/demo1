@@ -1,0 +1,68 @@
+ encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
+      <tags>View</tags>
+      <tags>categoryTag:Gradle (STS)</tags>
+      <menus xmi:id="_sf5XgmelEeiZF9t9njHyAg" elementId="org.springsource.ide.eclipse.gradle.ui.views.GradleTasksView">
+        <tags>ViewMenu</tags>
+        <tags>menuContribution:menu</tags>
+      </menus>
+      <menus xsi:type="menu:PopupMenu" xmi:id="_sf5Xg2elEeiZF9t9njHyAg" elementId="org.springsource.ide.eclipse.gradle.ui.views.GradleTasksView">
+        <tags>menuContribution:popup</tags>
+        <tags>popup:org.springsource.ide.eclipse.gradle.ui.views.GradleTasksView</tags>
+      </menus>
+      <toolbar xmi:id="_sf5XhGelEeiZF9t9njHyAg" elementId="org.springsource.ide.eclipse.gradle.ui.views.GradleTasksView" visible="false"/>
+    </sharedElements>
+    <sharedElements xsi:type="basic:Part" xmi:id="_sf5XhWelEeiZF9t9njHyAg" elementId="org.eclipse.jdt.debug.ui.DisplayView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Display" iconURI="platform:/plugin/org.eclipse.jdt.debug.ui/icons/full/etool16/disp_sbook.gif" closeable="true">
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view>mem.getCheckEmailValid()&lt;/view>"/>
+      <tags>View</tags>
+      <tags>categoryTag:Debug</tags>
+      <menus xmi:id="_sf5XhmelEeiZF9t9njHyAg" elementId="org.eclipse.jdt.debug.ui.DisplayView">
+        <tags>ViewMenu</tags>
+        <tags>menuContribution:menu</tags>
+      </menus>
+      <menus xsi:type="menu:PopupMenu" xmi:id="_sf5Xh2elEeiZF9t9njHyAg" elementId="org.eclipse.jdt.debug.ui.DisplayView">
+        <tags>menuContribution:popup</tags>
+        <tags>popup:org.eclipse.jdt.debug.ui.DisplayView</tags>
+      </menus>
+      <toolbar xmi:id="_sf5XiGelEeiZF9t9njHyAg" elementId="org.eclipse.jdt.debug.ui.DisplayView" visible="false"/>
+    </sharedElements>
+    <sharedElements xsi:type="basic:Part" xmi:id="_sf5XiWelEeiZF9t9njHyAg" elementId="org.eclipse.jdt.callhierarchy.view" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Call Hierarchy" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/call_hierarchy.gif" closeable="true">
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view search_scope_type=&quot;1&quot;/>"/>
+      <tags>View</tags>
+      <tags>categoryTag:Java</tags>
+      <menus xmi:id="_sf5XimelEeiZF9t9njHyAg" elementId="org.eclipse.jdt.callhierarchy.view">
+        <tags>ViewMenu</tags>
+        <tags>menuContribution:menu</tags>
+      </menus>
+      <menus xsi:type="menu:PopupMenu" xmi:id="_sf5Xi2elEeiZF9t9njHyAg" elementId="org.eclipse.jdt.callhierarchy.view">
+        <tags>menuContribution:popup</tags>
+        <tags>popup:org.eclipse.jdt.callhierarchy.view</tags>
+      </menus>
+      <menus xsi:type="menu:PopupMenu" xmi:id="_sf5XjGelEeiZF9t9njHyAg" elementId="org.eclipse.jdt.callhierarchy.view">
+        <tags>menuContribution:popup</tags>
+        <tags>popup:org.eclipse.jdt.callhierarchy.view</tags>
+      </menus>
+      <toolbar xmi:id="_sf5XjWelEeiZF9t9njHyAg" elementId="org.eclipse.jdt.callhierarchy.view" visible="false"/>
+    </sharedElements>
+    <sharedElements xsi:type="basic:Part" xmi:id="_sf5XjmelEeiZF9t9njHyAg" elementId="org.eclipse.jdt.junit.ResultView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="JUnit" iconURI="platform:/plugin/org.eclipse.jdt.junit/icons/full/eview16/junit.gif" closeable="true">
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view failuresOnly=&quot;false&quot; layout=&quot;1&quot; orientation=&quot;2&quot; ratio=&quot;294&quot; scroll=&quot;false&quot; time=&quot;true&quot;/>"/>
+      <tags>View</tags>
+      <tags>categoryTag:Java</tags>
+      <menus xmi:id="_sf5Xj2elEeiZF9t9njHyAg" elementId="org.eclipse.jdt.junit.ResultView">
+        <tags>ViewMenu</tags>
+        <tags>menuContribution:menu</tags>
+      </menus>
+      <menus xsi:type="menu:PopupMenu" xmi:id="_sf5XkGelEeiZF9t9njHyAg" elementId="org.eclipse.jdt.junit.ResultView">
+        <tags>menuContribution:popup</tags>
+        <tags>popup:org.eclipse.jdt.junit.ResultView</tags>
+      </menus>
+      <menus xsi:type="menu:PopupMenu" xmi:id="_sf5XkWelEeiZF9t9njHyAg" elementId="org.eclipse.jdt.junit.ResultView">
+        <tags>menuContribution:popup</tags>
+        <tags>popup:org.eclipse.jdt.junit.ResultView</tags>
+      </menus>
+      <toolbar xmi:id="_sf5XkmelEeiZF9t9njHyAg" elementId="org.eclipse.jdt.junit.ResultView" visible="false"/>
+    </sharedElements>
+    <sharedElements xsi:type="basic:Part" xmi:id="_sf5Xk2elEeiZF9t9njHyAg" elementId="org.eclipse.debug.ui.BreakpointView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Breakpoints" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/breakpoint_view.png" closeable="true">
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
+      <tags>View</tags>
+      <tags>categoryTag:Debug</tags>
+      <menus xmi:id="_sf5XlGelEeiZF9t9njHyAg" elementId="o

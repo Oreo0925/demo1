@@ -1,0 +1,293 @@
+ <div class="container" ng-controller="ParentDeviceCtrl">
+		  	<div class="row">
+	 	  	 <!-- <div class="col-md-12">
+				 <div class="row  border-bottom white-bg dashboard-header">
+					<div class="col-sm-4">
+				    	<div class="row">
+				    		<label>設備ID</label>
+				     		<input ng-model="identifier" class ="form-control" disabled/>
+				    	</div>
+				    	<div class="row">
+				    		<label>設備型號</label>
+				     		<input ng-model="deviceName" class ="form-control" disabled/>
+				    	</div>
+				    	<div class="row">
+				    		<label>剩餘天數</label>
+				     		<input ng-model="remainDay" class ="form-control" disabled/>
+				    	</div>
+			   		 </div>
+			    	 <div class="col-sm-4"></div>
+				     <div class="col-sm-4">
+				     	<div class="row">
+				    		<label>保管人</label>
+				     		<input ng-model="owner" class ="form-control" disabled/>
+				    	</div>
+				    	<div class="row">
+				    		<label>使用人</label>
+				     		<input ng-model="ownerManager" class ="form-control" disabled/>
+				    	</div>
+				    	<div class="row">
+				    		<label>使用魚塘</label>
+				     		<input ng-model="parentGroupListName" class ="form-control" disabled/>
+				    	</div>
+				    </div>
+				</div> -->
+				<div id="" class="content" style="padding-top: 30px;" ng-controller="ChildDevicesCtrl"  ng-init="tableStyle={'text-align':'center', 'vertical-align':'middle'}">
+					<div class="col-sm-6">
+					  <div class="ibox float-e-margins">
+					 	 <div class="ibox-title">
+					 	 	 <h5>{{deviceControlTitle}}</h5>
+					 	 	 <div class="ibox-tools">
+                                 <a class="collapse-link">
+                                     <i class="fa fa-chevron-up"></i>
+                                 </a>
+                                 <a class="close-link">
+                                     <i class="fa fa-times"></i>
+                                 </a>
+                             </div>
+					 	 </div>
+					 	 <div class="ibox-content">
+					 	 	<table class="table table-bordered" ng-style="tableStyle">
+						    	<thead>
+							      <tr>
+							        <th>{{serialNumber}}</th>
+							        <th ng-style="tableStyle">{{manualAuto}}</th>
+							        <th ng-style="tableStyle">{{stopRun}}</th>
+							        <th ng-style="tableStyle">{{currentStatus}}</th>
+							        <th ng-style="tableStyle">{{description}}</th>
+							      </tr>
+						   	 	</thead>
+						   		<tbody>
+							      <tr align="center" valign="center">
+							        <td>{{identifierOne}}</td>
+							        <td rowspan="2">
+							        	<div style="padding-top:25px; width:140px">
+							        		<input
+										    bs-switch
+										    ng-model="automaticOne"
+										    type="checkbox"
+										    switch-active="{{ isActiveOne }}"
+										    switch-on-text="{{ onText }}"
+										    switch-off-text="{{ offText }}"
+										    switch-animate="{{ animate }}"
+										    switch-size="{{ size }}"
+										    switch-radio-off="{{ radioOff }}"
+										    switch-label-width="{{ labelWidth }}"
+										    switch-handle-width="{{ handleWidth }}"
+										    switch-inverse="{{!inverse}}"
+										    ng-change="switchOne()"/>
+							        	</div>
+							        </td>
+							        <td rowspan="2">
+							          <div style= "margin-top:15px;">
+							          	<table>
+							          	  <tbody>
+							          	    <tr>	
+							          	    	<td rowspan="2" style='border-right:1px solid #ddd'>
+							          	    		<!-- <div style="margin-bottom:10px; margin-left:4px;">停</div> -->
+							          	    		<div style="margin-bottom:15px; margin-left:4px;"></div>
+							          	    		<div style="padding-bottom:15px; padding-right:2px;">
+							        					<button id="btn1" class="roundBtn" style="background-color:#DC143C" ng-click="ctrlOne()"></button>	
+							        				</div>
+							          	    	</td>
+								        		<td rowspan="2">
+							        		    	<!-- <div style="margin-bottom:2px; margin-left:7px;">轉</div> -->
+							        				<div style="margin-bottom:1px;padding:3px;">
+							        					<button id="btn2" class="roundBtn" style="background-color:#7FFF00" ng-click="ctrlTwo()"></button>	
+							        				</div>
+												</td>
+								        		<td style='border-left:1px solid #ddd'>
+								        			<!-- <div style="margin-bottom:-3px; margin-left:8px;">轉</div> -->
+								        			<div style="margin-bottom:0px; margin-left:4px;"></div>
+							         				<div style="padding-bottom:5px; padding-left: 2px;">
+							        					<button id="btn3" class="roundBtn" style="background-color:#DCDCDC"></button>	
+							        				</div>
+								        		</td>
+							          	    </tr>
+							          	    <tr>	
+							          	    	<!-- <td style="padding-bottom:10px; border-right:1px solid #ddd; border-top:1px solid #ddd; background-color:#ddd">&nbsp</td> -->
+							          	    	<td style='border-left:1px solid #ddd'>
+							          	    		<div style="padding-left: 2px;">
+							        					<button id="btn4" class="roundBtn" style="background-color:#DCDCDC"></button>	
+								        			</div>
+								        		</td>
+							          	    </tr>
+							          	  </tbody>
+							          	</table>
+							          </div>
+							        </td>
+							        <td>
+							        	<div style="padding-top:5px" ng-switch on="statusOne">
+						        				<span ng-switch-when="0"><div class="rectangle2" style="background-color:#A9A9A9"><div class="inhertText"><h5>不在線</h5></div></div></span>
+						        				<span ng-switch-when="1"><div class="rectangle2" style="background-color:#7FFF00"><div class="inhertText"><h5>正常</h5></div></div></span>
+						        				<span ng-switch-when="2"><div class="rectangle2" style="background-color:#DC143C"><div class="inhertText"><h5>數據報警</h5></div></div></span>
+						        				<span ng-switch-when="3"><div class="rectangle2" style="background-color:#DC143C"><div class="inhertText"><h5>設備報警</h5></div></div></span>
+						        				<span ng-switch-when="4"><div class="rectangle2" style="background-color:#FFFF00"><div class="inhertText"><h5>運轉稍慢</h5></div></div></span>
+						        				<span ng-switch-when="5"><div class="rectangle2" style="background-color:#DC143C"><div class="inhertText"><h5>電流過低</h5></div></div></span>
+						        		</div>
+							        </td>
+							        <td>{{descOne}}</td>
+							      </tr>
+							      <tr align="center" valign="center">
+							        <td>{{identifierTwo}}</td>
+							        <td>
+							        	<div style="padding-top:5px" ng-switch on="statusTwo">
+						        				<span ng-switch-when="0"><div class="rectangle2" style="background-color:#A9A9A9"><div class="inhertText"><h5>不在線</h5></div></div></span>
+						        				<span ng-switch-when="1"><div class="rectangle2" style="background-color:#7FFF00"><div class="inhertText"><h5>正常</h5></div></div></span>
+						        				<span ng-switch-when="2"><div class="rectangle2" style="background-color:#DC143C"><div class="inhertText"><h5>數據報警</h5></div></div></span>
+						        				<span ng-switch-when="3"><div class="rectangle2" style="background-color:#DC143C"><div class="inhertText"><h5>設備報警</h5></div></div></span>
+						        				<span ng-switch-when="4"><div class="rectangle2" style="background-color:#FFFF00"><div class="inhertText"><h5>運轉稍慢</h5></div></div></span>
+						        				<span ng-switch-when="5"><div class="rectangle2" style="background-color:#DC143C"><div class="inhertText"><h5>電流過低</h5></div></div></span>
+						        		</div>
+							        </td>
+							        <td>{{descTwo}}</td>
+							      </tr>
+							      <tr align="center" valign="center">
+							        <td>{{identifierThree}}</td>
+							        <td>
+							        	<input
+										    bs-switch
+										    ng-model="automaticTwo"
+										    type="checkbox"
+										    switch-active="{{ isActiveTwo }}"
+										    switch-on-text="{{ onText }}"
+										    switch-off-text="{{ offText }}"
+										    switch-animate="{{ animate }}"
+										    switch-size="{{ size }}"
+										    switch-radio-off="{{ radioOff }}"
+										    switch-label-width="{{ labelWidth }}"
+										    switch-handle-width="{{ handleWidth }}"
+										    switch-inverse="{{!inverse}}"
+										    ng-change="switchTwo()">
+							        </td>
+							        <td>
+							        	<input
+										    bs-switch
+										    ng-model="enabled"
+										    type="checkbox"
+										    switch-active="{{ isActiveThree }}"
+										    switch-on-text="{{ onText2 }}"
+										    switch-off-text="{{ offText2 }}"
+										    switch-animate="{{ animate }}"
+										    switch-size="{{ size }}"
+										    switch-radio-off="{{ radioOff }}"
+										    switch-label-width="{{ labelWidth }}"
+										    switch-handle-width="{{ handleWidth }}"
+										    switch-inverse="{{!inverse}}"
+										    ng-change="switchThree()">
+							        </td>
+							        <td>
+							        	<div style="padding-top:5px" ng-switch on="statusThree">
+					        				<span ng-switch-when="0"><div class="rectangle2" style="background-color:#A9A9A9"><div class="inhertText"><h5>不在線</h5></div></div></span>
+					        				<span ng-switch-when="1"><div class="rectangle2" style="background-color:#7FFF00"><div class="inhertText"><h5>正常</h5></div></div></span>
+					        				<span ng-switch-when="2"><div class="rectangle2" style="background-color:#DC143C"><div class="inhertText"><h5>數據報警</h5></div></div></span>
+					        				<span ng-switch-when="3"><div class="rectangle2" style="background-color:#DC143C"><div class="inhertText"><h5>設備報警</h5></div></div></span>
+					        				<span ng-switch-when="4"><div class="rectangle2" style="background-color:#FFFF00"><div class="inhertText"><h5>運轉稍慢</h5></div></div></span>
+					        				<span ng-switch-when="5"><div class="rectangle2" style="background-color:#DC143C"><div class="inhertText"><h5>電流過低</h5></div></div></span>
+						        		</div>
+							        </td>
+							        <td>{{descThree}}</td>
+							      </tr>
+					    	   </tbody>
+					 	  	</table>
+					 	 </div>
+					 </div>
+					</div>
+					<div class="col-sm-3">
+						<!-- <div class="ibox float-e-margins">
+					 		 <div class="ibox-title">
+					 		 	<h5>設備狀態</h5>
+					 	 	 	<div class="ibox-tools">
+	                                 <a class="collapse-link">
+	                                     <i class="fa fa-chevron-up"></i>
+	                                 </a>
+	                                 <a class="close-link">
+	                                     <i class="fa fa-times"></i>
+	                                 </a>
+                             	</div>
+					 		 </div>
+					 		 <div class="ibox-content">
+				 		 		<table class="table table-bordered" ng-style="tableStyle">
+							    	<thead>
+								      <tr>
+								        <th ng-style="tableStyle">設備類別</th>
+								        <th ng-style="tableStyle">目前狀態</th>
+								      </tr>
+							   	 	</thead>
+							   		<tbody>
+								      <tr ng-repeat="device in devices">
+								        <td>{{device.name}}</td>
+								        <td>
+								        	<div style="padding-top:5px" ng-switch on="device.status">
+						        				<span ng-switch-when="0"><div class="rectangle" style="background-color:#A9A9A9"><div class="inhertText"><h5>不在線</h5></div></div></span>
+						        				<span ng-switch-when="1"><div class="rectangle" style="background-color:#7FFF00"><div class="inhertText"><h5>正常</h5></div></div></span>
+						        				<span ng-switch-when="2"><div class="rectangle" style="background-color:#DC143C"><div class="inhertText"><h5>數據報警</h5></div></div></span>
+						        				<span ng-switch-when="3"><div class="rectangle" style="background-color:#DC143C"><div class="inhertText"><h5>設備報警</h5></div></div></span>
+						        				<span ng-switch-when="4"><div class="rectangle" style="background-color:#FFFF00"><div class="inhertText"><h5>運轉稍慢</h5></div></div></span>
+						        				<span ng-switch-when="5"><div class="rectangle" style="background-color:#DC143C"><div class="inhertText"><h5>電流過低</h5></div></div></span>
+							        		</div>
+								        </td>
+								      </tr>
+							    	 </tbody>
+					 	  		</table>
+					 		 </div>
+				 		 </div> -->
+					</div>
+					<div class="col-sm-3">
+					<!-- 	<div class="ibox float-e-margins">
+					 		 <div class="ibox-title">
+					 		 	<h5>數據狀態</h5>
+					 	 	 	<div class="ibox-tools">
+	                                 <a class="collapse-link">
+	                                     <i class="fa fa-chevron-up"></i>
+	                                 </a>
+	                                 <a class="close-link">
+	                                     <i class="fa fa-times"></i>
+	                                 </a>
+                           		</div>
+					 		 </div>
+					 		 <div class="ibox-content">
+				 		 		<table class="table table-bordered" ng-style="tableStyle">
+							    	<thead>
+								      <tr>
+								        <th ng-style="tableStyle">數據類別</th>
+								        <th ng-style="tableStyle">目前數據</th>
+								      </tr>
+							   	 	</thead>
+							   		<tbody>
+								      <tr>
+								        <td>{{dissolver}}</td>
+								        <td>
+								        	<div style="padding-top:5px" ng-switch on="dissolverColor">
+						        				<span ng-switch-when="0"><div class="rectangle" style="background-color:#7FFF00"><div class="inhertText"><h5>{{dissolverValue}}</h5></div></div></span>
+						        				<span ng-switch-when="1"><div class="rectangle" style="background-color:#DC143C"><div class="inhertText"><h5>{{dissolverValue}}</h5></div></div></span>
+							        		</div>
+								        </td>
+				       			      </tr>
+				       			      <tr>
+								        <td>{{temperature}}</td>
+								        <td>
+								        	<div style="padding-top:5px" ng-switch on="temperatureColor">
+								        		<span ng-switch-when="0"><div class="rectangle" style="background-color:#7FFF00"><div class="inhertText"><h5>{{temperatureValue}}</h5></div></div></span>
+						        				<span ng-switch-when="1"><div class="rectangle" style="background-color:#DC143C"><div class="inhertText"><h5>{{temperatureValue}}</h5></div></div></span>
+							        		</div>
+								        </td>
+				       			      </tr>
+				       			      <tr>
+								        <td>{{ph}}</td>
+								        <td>
+								        	<div style="padding-top:5px" ng-switch on="phColor">
+								        		<span ng-switch-when="0"><div class="rectangle" style="background-color:#7FFF00"><div class="inhertText"><h5>{{phValue}}</h5></div></div></span>
+						        				<span ng-switch-when="1"><div class="rectangle" style="background-color:#DC143C"><div class="inhertText"><h5>{{phValue}}</h5></div></div></span>
+							        		</div>
+								        </td>
+				       			      </tr>
+							    	</tbody>
+					 	  		</table>
+					 		 </div>
+			 		 	</div> -->
+					 </div>
+				  </div>
+			   </div>
+  			</div>
+		</div>

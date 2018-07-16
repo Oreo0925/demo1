@@ -1,0 +1,120 @@
+<div class="lead">鱼塘详情</div>
+<form class="form-horizontal">
+	<div class="row">
+		<div class="col-md-3">
+			<div class="row">
+				<div class="form-group m-b-none">
+					<label class="col-md-4 control-label">养殖户</label>
+					<div class="col-md-8">
+						<div class="form-control-static" ng-if="deviceGroup.propMap.owner">
+							<img alt="image" class="img-circle" src="images/a4.jpg"
+								style="width: 25px; height: 25px;">
+							{{deviceGroup.propMap.owner.value}} <span
+								class="lazur-bg text-center"> <span phone-diretive><i class="fa fa-phone"></i></span><span>
+							</span>
+							<!-- {{deviceGroup.propMap.ownerPhone.value}}  -->
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group m-b-none">
+					<label class="col-md-4 control-label">养殖管家</label>
+					<div class="col-md-8">
+						<div class="form-control-static"
+							ng-if="deviceGroup.propMap.ownerManager">
+							<img alt="image" class="img-circle" src="images/a4.jpg"
+								style="width: 25px; height: 25px;">
+							{{deviceGroup.propMap.ownerManager.value}} <span
+								class="lazur-bg text-center"> <i class="fa fa-phone"></i><span>
+							</span>
+							<!-- {{deviceGroup.propMap.ownerManagerPhone.value}}-->
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="row">
+				<div class="form-group m-b-none">
+					<label class="col-md-4 control-label">鱼塘名称</label>
+					<div class="col-md-8">
+						<p class="form-control-static">{{deviceGroup.name}}</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group m-b-none">
+					<label class="col-md-4 control-label">区域</label>
+					<div class="col-md-8">
+						<div class="form-control-static">{{deviceGroup.name}}</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group m-b-none">
+					<label class="col-md-4 control-label">鱼种</label>
+					<div class="col-md-8">
+						<p class="form-control-static">{{deviceGroup.propMap.species.value}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="row">
+				<div class="form-group m-b-none">
+				<label class="col-md-4 control-label">设备名称</label>
+				<div class="col-md-8">
+					<p class="form-control-static">{{device.name}}</p>
+				</div>
+			</div>
+			</div>
+			<div class="row">
+				<div class="form-group m-b-none">
+				<label class="col-md-4 control-label">设备ID</label>
+				<div class="col-md-8">
+					<p class="form-control-static">{{device.identifier}}</p>
+				</div>
+			</div>
+			</div>
+			<div class="row">
+				<div class="form-group m-b-none">
+				<label class="col-md-4 control-label">设备型号</label>
+				<div class="col-md-8">
+					<p class="form-control-static">KD326</p>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="row">
+				<div class="form-group m-b-none">
+				<label class="control-label">告警详情</label>
+				<div>
+					<p class="form-control-static">
+					    2018/05/27 12:30:10<br>
+						[數據告警] 本次告警數據 1.9 低於告警線 2.5。
+						<!-- 如果pg信号延时过短，会造成供电不稳，cpu不能产生复位信号，导致电脑无法启动。随后重启时提供电压已经稳定，于是电脑启动正常。看来故障源于电源，换一个电源后重新开机测试，無效。 -->
+					</p>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+		<!-- <div class="col-md-6">
+						<div class="form-group">
+							<label class="col-md-4 control-label">接聽狀況</label>
+							<div class="col-md-8">
+								<p class="form-control-static">未接聽</p>
+							</div>
+						</div>
+					</div> -->
+
+		<!-- 
+				<div class="col-md-4">
+					<div ng-include="'/celefish/tpls/baiduMap.html'"></div>
+				</div>
+				 -->
+</form>

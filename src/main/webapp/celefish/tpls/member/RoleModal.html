@@ -1,0 +1,36 @@
+<div class="modal fade">
+  <div class="modal-dialog" style="width:600px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">{{title}}</h4>
+      </div>
+      <div class="modal-body">
+		<form class="form-horizontal" role="form" name="roleName">
+		  <div class="form-group">
+		    <label for="name" class="col-sm-2 control-label">{{headName}}</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" id="name" name ="name" placeholder="" ng-model="name" required>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="description" class="col-sm-2 control-label">{{headDescription}}</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" id="description" placeholder="" ng-model="description">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="priority" class="col-sm-2 control-label">{{headPriority}}</label>
+		    <div class="col-sm-10">
+		      <input type="number" class="form-control" id="priority" placeholder="" ng-model="priority">
+		    </div>
+		  </div>
+		</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" ng-click="confirm()" class="btn btn-success" data-dismiss="modal" ng-disabled="roleName.$invalid">Confirm</button>
+        <button type="button" ng-click="cancel()" class="btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

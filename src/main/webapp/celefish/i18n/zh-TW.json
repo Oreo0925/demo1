@@ -1,0 +1,52 @@
+{
+  "deviceControl":{
+ 	 "title": "設備控制與狀態",
+ 	 "serialNumber": "編號",
+ 	 "manualAuto": "手動/自動",
+ 	 "stopRun":"停止/運轉",
+ 	 "currentStatus":"目前狀態",
+ 	 "description":"說明"
+  },
+  "role":{
+ 	 "list":"角色列表",
+ 	 "name": "角色名稱",
+ 	 "description": "描述",
+ 	 "priority": "優先序",
+ 	 "placeHolder":"請輸入角色名稱"
+  },
+  "toaster": {
+    "selectOneRule": "請先選擇一個角色!",
+    "selectOneGroup": "請先選擇一個區域!"
+  },
+  "serialNumber": "序號",
+  "member":{
+ 	 "list":"人員列表",
+ 	 "add": "加入人員",
+ 	 "remove": "移除人員",
+ 	 "id": "使用者 ID.",
+ 	 "name": "使用者名稱",
+ 	 "account": "帳號",
+ 	 "authority": "擁有角色權限"
+  },
+  "group":{
+ 	 "list":"區域列表",
+ 	 "name":"區域名稱",
+ 	 "location":"地點",
+ 	 "belong":"隸屬於",
+ 	 "description":"描述",
+ 	 "manager":"經理人",
+ 	 "longitude":"經度",
+ 	 "latitude":"緯度",
+ 	 "owner":"養殖戶",
+ 	 "rules":"規則庫",
+ 	 "childDevNum":"子區域數量",
+ 	 "placeHolder":"請輸入區域名稱",
+ 	 "authorizeRole":"指派角色",
+ 	 "removeRole":"移除角色",
+ 	 "roleList":"角色列表"
+  },
+  "add":"新增",
+  "update":"修改",
+  "search":"查詢",
+  "delete":"刪除"
+}

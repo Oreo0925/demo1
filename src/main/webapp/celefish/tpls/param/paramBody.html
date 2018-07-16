@@ -1,0 +1,110 @@
+<meta charset="UTF-8">
+<div class="container" ng-model="paramBody">
+	<div class="row">
+		  <div class="col-sm-4">
+		  <table class="table">
+			  <thead class="thead-dark">
+			    <tr>
+			      <th colspan="3" >溶氧控制器数据读取</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <td>溶氧值</td>
+			      <td><p ng-model="dissolver_value">{{dissolver_value}} mg/dl</p></td>
+			      <td></td>
+			    </tr>
+			    <tr>
+			      <td>上限</td>
+			      <td><p ng-model="oxy_limit_up">{{oxy_limit_up}} mg/dl </p></td>
+			      <td>溶氧告警上限</td>
+			    </tr>
+			    <tr>
+			      <td>下限1</td>
+			      <td><p ng-model="oxy_limit_down1">{{oxy_limit_down1}} mg/dl</p></td>
+			      <td>溶氧告警下限1</td>
+			    </tr>
+			    <tr>
+			      <td>下限2</td>
+			      <td><p ng-model="oxy_limit_down2">{{oxy_limit_down2}} mg/dl</p></td>
+			      <td>溶氧告警下限2</td>
+			    </tr>
+			    <tr>
+			      <td>盐度</td>
+			      <td><p ng-model="salinity">{{salinity}}</p></td>
+			      <td></td>
+			    </tr>
+			    <tr>
+			      <td>报警线1</td>
+			      <td><p ng-model="alertline1">{{alertline1}} mg/dl</p></td>
+			      <td>溶氧报警线1</td>
+			    </tr>
+			    <tr>
+			      <td>报警线2</td>
+			      <td><p ng-model="alertline2">{{alertline2}} mg/dl</p></td>
+			      <td>溶氧报警线2</td>
+			    </tr>
+			  </tbody>
+			</table>
+		  </div>
+		  <div class="col-sm-4">
+		  	<table class="table">
+			  <thead class="thead-dark">
+			    <tr>
+			      <th colspan="3" >溶氧控制器设置介面</th>
+			    </tr>
+			    <tr>
+			      <th class="col-sm-4">告警层级</th>
+			      <th class="col-sm-4">数值</th>
+			      <th class="col-sm-4">说明</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <td>上限</td>
+			      <td><input class="input-sm" ng-model="setParam.oxy_limit_up_set" type="text" /></td>
+			      <td>溶氧告警上限</td>
+			    </tr>
+			    <tr>
+			      <td>下限1</td>
+			      <td><input class="input-sm" ng-model="setParam.oxy_limit_down1_set" type="text" /></td>
+			      <td>溶氧告警下限1</td>
+			    </tr>
+			    <tr>
+			      <td>下限2</td>
+			      <td><input class="input-sm" ng-model="setParam.oxy_limit_down2_set" type="text" /></td>
+			      <td>溶氧告警下限2</td>
+			    </tr>
+			    <tr>
+			      <td>盐度</td>
+			      <td><input class="input-sm" ng-model="setParam.salinity_set" type="text" /></td>
+			      <td></td>
+			    </tr>
+			  </tbody>
+			</table>
+			<button ng-click="oxyLimit($event)" type="button" class="btn btn-primary">套用</button>
+		  </div>
+		  <div class="col-sm-4">
+		  	<table class="table">
+			  <thead class="thead-dark">
+			    <tr>
+			      <th colspan="3" >溶氧控制器告警参数</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <td>报警线1</td>
+			      <td><input class="input-sm" ng-model="setParam.alertline1_set" type="text" /></td>
+			      <td>溶氧报警线1</td>
+			    </tr>
+			    <tr>
+			      <td>报警线2</td>
+			      <td><input class="input-sm" ng-model="setParam.alertline2_set" type="text" /></td>
+			      <td>溶氧报警线2</td>
+			    </tr>
+			  </tbody>
+			</table> 
+			<button ng-click="alertLine($event)" type="button" class="btn btn-primary">套用</button>
+		  </div>
+	</div>
+</div>

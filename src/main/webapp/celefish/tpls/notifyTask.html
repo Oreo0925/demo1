@@ -1,0 +1,112 @@
+<div class="row" ng-controller="notifyTaskCtrl">
+	<div class="col-md-12 ">
+		<div class="ibox float-e-margins" style="margin-right: 65px;">
+			<!-- <div class="ibox-title">
+				<h5>异常通知列表</h5>
+			</div> -->
+			<div class="ibox-content ">
+				<!--  裝置異常指數 Start-->
+				<div class="row">
+					<div class="col-md-6">
+						<div class="widget red-bg no-padding text-center">
+							<div class="font-bold no-margins">
+								<i class="fas fa-exclamation-circle"></i>
+								<span> </span><span>待人工通知</span>
+							</div>
+							<div class="font-bold no-margins">{{unresolvedEventNum}}</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="widget navy-bg no-padding text-center">
+							<div class="font-bold no-margins">
+								<i class="fas fa-check-circle"></i>
+								<span> </span>已处理
+							</div>
+							<div class="font-bold no-margins">{{resolvedEventNum}}</div>
+						</div>
+					</div>
+					<!--  裝置異常指數 End-->
+				</div>
+				<!-- <input type="text" class="form-control input-sm m-b-xs" id="filter" placeholder="搜寻装置，请输入ID"> -->
+				<div ng-controller="unresolvedEventByMemCtrl">
+					<div class="col-md-12 no-padding bg-info text-center"><h3>当前任务</h3></div>
+					<table class="footable table table-hover table-stripped toggle-arrow-tiny default breakpoint footable-loaded m-b-none" data-paging="true" data-paging-size="3" data-filter="#filter">
+						<thead>
+							<tr>
+								<th style="width: 30%" class="footable-sortable">设备</th>
+								<th style="width: 40%" class="footable-sortable">告警时间/类型</th>
+								<th style="width: 30%" class="footable-sortable text-center">状态</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="event in eventList | orderBy : 'alarmTime'" ng-click="selectRow($index)" ng-class="{'bg-info': $index == selectedRow}">
+								<td ng-click="selectEvent(event)" style="cursor: pointer;">
+									<div>
+										{{event.device.name}} 
+										<!-- ({{event.device.identifier}})<br>
+										<small>{{event.device.parentGroupList[0].name}}</small> -->
+									</div>
+								</td>
+								<td ng-click="selectEvent(event)" style="cursor: pointer;">
+									{{event.alarmTime | date : "y-MM-dd HH:mm:ss"}}<br>
+									{{event.alarmType == 1 ? '数据告警 (告警限1)' : ''}}{{event.alarmType == 2 ? '数据告警 (告警限2)' : ''}}
+									{{event.alarmType == 3 ? '不在线告警' : ''}}{{event.alarmType == 4 ? '设备告警' : ''}}
+								</td>
+								<td class="text-center">
+									待重播
+									<!-- <a ng-click="notifyPhone()"><i ng-if="event.closed == 0" class="far fa-play-circle fa-lg text-info"></i></a>
+									<i ng-if="event.closed == 1 || event.closed == 2" class="far fa-check-circle fa-lg text-info"></i>-->
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<hr>
+				<div ng-controller="unresolvedEventCtrl">
+					<div class="col-md-12 no-padding bg-info text-center"><h3>待通知列表</h3></div>
+					<table id="unassignTask" class="footable table table-hover table-stripped toggle-arrow-tiny default breakpoint footable-loaded m-b-none" data-paging="true" data-paging-size="3" data-filter="#filter">
+						<thead>
+							<tr>
+								<th style="width: 30%" class="footable-sortable">设备</th>
+								<th style="width: 40%" class="footable-sortable">告警时间/类型</th>
+								<th style="width: 30%" class="footable-sortable text-center">状态</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="event in allEventList | orderBy : 'alarmTime'" ng-click="selectRow($index)" ng-class="{'bg-info': $index == selectedRow}">
+								<td ng-click="selectEvent(event)" style="cursor: pointer;">
+									<div>
+										{{event.device.name}}
+									</div>
+								</td>
+								<td ng-click="selectEvent(event)" style="cursor: pointer;">
+									{{event.alarmTime | date : "y-MM-dd HH:mm:ss"}}<br>
+									{{event.alarmType == 1 ? '数据告警 (告警限1)' : ''}}{{event.alarmType == 2 ? '数据告警 (告警限2)' : ''}}
+									{{event.alarmType == 3 ? '不在线告警' : ''}}{{event.alarmType == 4 ? '设备告警' : ''}}
+								</td>
+								<td class="text-center">
+									待通知
+									<!-- <i ng-if="event.closed == 0" class="far fa-play-circle fa-lg text-info"></i>
+									<i ng-if="event.closed == 1 || event.closed == 2" class="far fa-check-circle fa-lg text-info"></i> -->
+								</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="3">
+									<ul class="pagination pull-right"></ul>
+								</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(document).ready(function() {
+		$('#unassignTask').footable();
+	});
+</script>

@@ -1,0 +1,79 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="ibox float-e-margins">
+				<div class="ibox-title">
+					<h5>装置列表</h5>
+					<div class="ibox-tools">
+				    <a class="dropdown-toggle" data-toggle="dropdown" href="" aria-expanded="false">
+				        <i class="fa fa-wrench"></i>
+				    </a>
+				    <ul class="dropdown-menu dropdown-user">
+				        <li><a href="" ng-click="openModal()">属性模板设定</a></li>
+				    </ul>
+				</div>
+				</div>
+				<div class="ibox-content">
+					<form method="get" class="form-horizontal">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="col-md-2 control-label">模板</label>
+									<div class="col-md-10">
+										<select class="form-control m-b" name="account">
+											<option>option 1</option>
+											<option>option 2</option>
+											<option>option 3</option>
+											<option>option 4</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6"></div>
+						</div>
+						<div class="hr-line-dashed"></div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	<div class="col-md-12">
+		<h2>裝置管理:</h2>
+		<br> 模板： <select ng-model="selectTemplate"
+			ng-options="x.name for x in deviceTemplate" ng-change="getDevices()"></select><br>
+		<button type="button" class="btn btn-primary btn-sm"
+			ng-click="createDeviceModal()">Add</button>
+		<table id="deviceList"
+			class="table table-bordered table-striped table-hover">
+			<tr ng-repeat="x in deviceTables">
+				<td>{{ $index + 1 }}</td>
+				<td>{{ x.id}}</td>
+				<td>{{ x.name }}</td>
+				<td>{{ x.description}}</td>
+			</tr>
+		</table>
+		<div class="col-md-12">
+			<button type="button" class="btn btn-primary">Send</button>
+		</div>
+	</div>
+
+	<script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <ul>
+                <li ng-repeat="item in $ctrl.items">
+                    <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ $ctrl.selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+</script>

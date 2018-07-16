@@ -1,0 +1,68 @@
+<div class="modal fade">
+  <div class="modal-dialog" style="width:600px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">{{title}}</h4>
+      </div>
+      <div class="modal-body">
+		<form class="form-horizontal" role="form" name="groupName">
+		  <div class="form-group">
+	      	<label for="name" class="col-sm-2 control-label">{{headGroupName}}</label>
+	    	<div class="col-sm-10">
+	      		<input type="text" class="form-control" id="name" name ="name" placeholder="" ng-model="name" required>
+	   		</div>
+		  </div>
+		  <div class="form-group">
+	      	<label for="belong" class="col-sm-2 control-label">{{headGroupBelong}}</label>
+	    	<div class="col-sm-10">
+                 <select class="form-control" id ="belong" ng-model="selecteParentGroup" ng-options="group as group.name for group in groups track by group.id">
+                     <option value=""></option>
+                 </select>
+	   		</div>
+		  </div>
+		  <div class="form-group">
+		    <label for="manager" class="col-sm-2 control-label">{{headGroupManager}}</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" id="manager" name ="manager" placeholder="" ng-model="manager" required>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="owner" class="col-sm-2 control-label">{{headGroupOwner}}</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" id="owner" name ="owner" placeholder="" ng-model="owner" required>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="location" class="col-sm-2 control-label">{{headGroupLocation}}</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" id="location" name ="location" placeholder="" ng-model="location" required>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="description" class="col-sm-2 control-label">{{headGroupDescription}}</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" id="description" name ="description" placeholder="" ng-model="description">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="longitude" class="col-sm-2 control-label">{{headGroupLongitude}}</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" id="longitude" name ="longitude" placeholder="" ng-model="longitude">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="latitude" class="col-sm-2 control-label">{{headGroupLatitude}}</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" id="latitude" name ="latitude" placeholder="" ng-model="latitude">
+		    </div>
+		  </div>
+		</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" ng-click="confirm()" class="btn btn-success" data-dismiss="modal" ng-disabled="groupName.$invalid">Confirm</button>
+        <button type="button" ng-click="cancel()" class="btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

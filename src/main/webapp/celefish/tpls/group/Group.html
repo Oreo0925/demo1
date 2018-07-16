@@ -1,0 +1,124 @@
+ <div class="container" ng-controller="GroupsCtrl">
+    <!-- Group List -->
+ 	<div class="row">
+  	  <div class="col-md-12">
+  	  	 <div class="ibox-title">
+  	  	 	<div class="row">
+  	  	 		<div class="col-sm-6">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="row">
+								<div class="col-sm-6">
+									<label>{{groupList}}:</label>
+									<button ng-click="addGroupModal()" type="button" class="btn btn-success">{{add}}</button>
+									<button ng-click="modifyGroupModal()" type="button" class="btn btn-success">{{update}}</button>
+								</div>
+								<div class="col-sm-6"></div>
+							</div>
+						</div>
+					</div>
+		   		</div>
+			    <div class="col-sm-2"></div>
+			    <div class="col-sm-4" style="padding-left:100px;">
+			    	<div class="row">
+			    		<div class="col-sm-9">
+			    			<input class="form-control" ng-model="inputName" placeholder='{{groupPlaceHolder}}' style="width:220px"/>
+			    		</div>
+			    		<div class="col-sm-3">
+							<button ng-click="getGroupByName()" type="button" class="btn btn-success">{{search}}</button>
+			    		</div>
+		    		</div>
+			    </div>
+  	  	 	</div>
+  	  	 </div>
+		 <div id="" class="ibox-content">
+           	<table class="table table-striped table-bordered table-hover datatable" id="groupListTable" >
+				<thead style="text-align: center;" id ="">
+					<th></th>
+					<th style="text-align: center;">{{serialNumber}}</th>
+					<th style="text-align: center;">{{groupName}}</th>
+					<th style="text-align: center;">{{groupLocation}}</th>
+					<th style="text-align: center;">{{groupDescription}}</th>
+					<th style="text-align: center;">{{groupManager}}</th>
+					<th style="text-align: center;">{{groupLongitude}}</th>
+					<th style="text-align: center;">{{groupLatitude}}</th>
+					<th style="text-align: center;">{{groupOwner}}</th>
+					<th style="text-align: center;">{{groupBelong}}</th>
+					<th style="text-align: center;">{{groupChildDevNum}}</th>
+					<th style="text-align: center;">{{groupDelete}}</th>
+				</thead>
+				<tbody id="">
+					<tr style="text-align: center;" ng-repeat="group in groups">
+						<td><input name="groups" icheck type="radio" value="{{group}}" ng-model="groups" ng-change="getGroup(group)"></td>
+						<td>{{$index + 1}}</td>
+						<td>{{group.name}}</td>
+						<td>{{group.location}}</td>
+						<td>{{group.description}}</td>
+						<td>{{group.propMap.ownerManager.value}}</td>
+						<td>{{group.propMap.longitude.value}}</td>
+						<td>{{group.propMap.latitude.value}}</td>
+						<td>{{group.propMap.owner.value}}</td>
+						<td>{{group.parentGroupName}}</td>
+						<td>{{group.subGroupList.length}}</td>
+						<td><button type="button" class="btn btn-danger" ng-click="deleteGroup(group)">{{groupDelete}}</button></td>
+					</tr>
+				</tbody>
+			</table>
+          </div>
+  	  </div>
+  	</div>
+  	<!-- Manage Group List -->
+  	<div class="row">
+  	  <div class="col-md-12" ng-controller="ManGroupCtrl">
+  	  	 <div class="row  border-bottom white-bg dashboard-header">
+			<div class="col-sm-6">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="row">
+							<div class="col-sm-6"><label>{{groupName}}:&nbsp{{regionName}}</label></div>
+							<div class="col-sm-6"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="row">
+							<div class="col-sm-6">
+								<label>{{groupRoleList}}:&nbsp</label>
+								<button ng-click="addRoleGroup()" type="button" class="btn btn-success">{{authorizeRole}}</button>
+								<button ng-click="deleteRoleGroup()" type="button" class="btn btn-success">{{removeRole}}</button>
+							</div>
+							<div class="col-sm-6"></div>
+						</div>
+					</div>
+				</div>
+	   		</div>
+		    <div class="col-sm-2"></div>
+		    <div class="col-sm-4" style="padding-left:100px;"></div>
+		 </div>
+			<div id="" class="ibox-content">
+            	<table class="table table-striped table-bordered table-hover" id="roleListTable" >
+					<thead id ="">
+						<th></th>
+						<th>{{serialNumber}}</th>
+						<th>{{roleOfName}}</th>
+						<th>{{roleDescription}}</th>
+						<th>{{rolePriority}}</th>
+					</thead>
+					<tbody id="">
+						<tr ng-repeat="role in roles">
+							<td style="text-align: center;"><input class="roleList" icheck type="checkbox" ng-value="{{role.id}}" ng-model="role.selected"></td>
+							<td>{{$index + 1}}</td>
+							<td>{{role.name}}</td>
+							<td>{{role.description}}</td>
+							<td>{{role.priority}}</td>
+						</tr>
+					</tbody>
+				</table>
+            </div>
+		 </div>	
+  	  </div>
+    </div>
+    
+      
+     

@@ -1,0 +1,52 @@
+{
+  "deviceControl":{
+ 	 "title": "设备控制与状态",
+ 	 "serialNumber": "编号",
+ 	 "manualAuto": "手动/自动",
+ 	 "stopRun":"停止/运转",
+ 	 "currentStatus":"目前状态",
+ 	 "description":"说明"
+  },
+  "role":{
+ 	 "list":"角色列表",
+ 	 "name": "角色名称",
+ 	 "description": "描述",
+ 	 "priority": "优先序",
+ 	 "placeHolder":"请输入角色名称"
+  },
+  "toaster":{
+    "selectOneRule": "请先选择一个角色!",
+    "selectOneGroup": "请先选择一个区域!"
+  },
+  "serialNumber": "序号",
+  "member":{
+ 	 "list":"人员列表",
+ 	 "add": "加入人员",
+ 	 "remove": "移除人员",
+ 	 "id": "使用者 ID.",
+ 	 "name": "使用者名称",
+ 	 "account": "帐号",
+ 	 "authority": "拥有角色权限"
+  },
+   "group":{
+ 	 "list":"区域列表",
+ 	 "name":"区域名称",
+ 	 "location":"地点",
+ 	 "belong":"隶属于",
+ 	 "description":"描述",
+ 	 "manager":"经理人",
+ 	 "longitude":"经度",
+ 	 "latitude":"纬度",
+ 	 "owner":"养殖户",
+ 	 "rules":"规则库",
+ 	 "childDevNum":"子区域数量",
+ 	 "placeHolder":"请输入区域名称",
+ 	 "authorizeRole":"指派角色",
+ 	 "removeRole":"移除角色",
+ 	 "roleList":"角色列表"
+  },
+  "add":"新增",
+  "update":"修改",
+  "search":"查询",
+  "delete":"刪除"
+}

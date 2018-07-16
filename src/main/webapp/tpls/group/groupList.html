@@ -1,0 +1,35 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="ibox float-e-margins">
+				<div class="ibox-title">
+					<h5>群组列表</h5>
+					<div class="ibox-tools">
+				    <a class="dropdown-toggle" data-toggle="dropdown" href="" aria-expanded="false">
+				        <i class="fa fa-wrench"></i>
+				    </a>
+				    <ul class="dropdown-menu dropdown-user">
+				        <li><a href="" ng-click="openModal()">属性模板设定</a></li>
+				    </ul>
+				</div>
+				</div>
+				<div class="ibox-content">
+					<table class="table table-bordered table-striped table-hover">
+						<thead>
+							<tr>
+								<td>No.</td>
+								<td ng-repeat="col in groupName">{{col}}</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="data in allGroupData">
+								<td>{{ $index + 1 }}</td>
+								<td ng-repeat="col in groupKey">{{data[col]}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

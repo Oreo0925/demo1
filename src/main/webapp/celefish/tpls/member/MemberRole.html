@@ -1,0 +1,114 @@
+ <div class="container" ng-controller="RoleCtrl">
+    <!-- Role List -->
+ 	<div class="row">
+  	  <div class="col-md-12">
+  	  	 <div class="ibox-title">
+  	  	 	<div class="row">
+  	  	 		<div class="col-sm-6">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="row">
+								<div class="col-sm-6">
+									<label>{{roleLlist}}:</label>
+									<button ng-click="addRoleModal()" type="button" class="btn btn-success">{{add}}</button>
+									<button ng-click="modifyRoleModal()" type="button" class="btn btn-success">{{update}}</button>
+								</div>
+								<div class="col-sm-6"></div>
+							</div>
+						</div>
+					</div>
+		   		</div>
+			    <div class="col-sm-2"></div>
+			    <div class="col-sm-4" style="padding-left:100px;">
+			    	<div class="row">
+			    		<div class="col-sm-9">
+			    			<input class="form-control" ng-model="inputName" placeholder='{{rolePlaceHolder}}' style="width:220px"/>
+			    		</div>
+			    		<div class="col-sm-3">
+							<button ng-click="getRoleByName()" type="button" class="btn btn-success">{{search}}</button>
+			    		</div>
+		    		</div>
+			    </div>
+  	  	 	</div>
+  	  	 </div>
+		 <div id="" class="ibox-content">
+           	<table class="table table-striped table-bordered table-hover" id="" >
+				<thead style="text-align: center;" id ="">
+					<th></th>
+					<th style="text-align: center;">{{serialNumber}}</th>
+					<th style="text-align: center;">{{roleOfName}}</th>
+					<th style="text-align: center;">{{roleDescription}}</th>
+					<th style="text-align: center;">{{rolePriority}}</th>
+					<th style="text-align: center;">{{roleDelete}}</th>
+				</thead>
+				<tbody id="">
+					<tr style="text-align: center;" ng-repeat="role in roles">
+						<td><input name="roles" icheck type="radio" value="{{role}}" ng-model="roles" ng-change="getRole(role)"></td>
+						<td>{{$index + 1}}</td>
+						<td>{{role.name}}</td>
+						<td>{{role.description}}</td>
+						<td>{{role.priority}}</td>
+						<td><button type="button" class="btn btn-danger" ng-click="deleteRole(role)">{{roleDelete}}</button></td>
+					</tr>
+				</tbody>
+			</table>
+          </div>
+  	  </div>
+  	</div>
+  	<!-- Member List -->
+  	<div class="row">
+  	  <div class="col-md-12" ng-controller="MemberCtrl">
+  	  	 <div class="row  border-bottom white-bg dashboard-header">
+			<div class="col-sm-6">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="row">
+							<div class="col-sm-6"><label>{{roleOfName}}:&nbsp{{roleName}}</label></div>
+							<div class="col-sm-6"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="row">
+							<div class="col-sm-6">
+								<label>{{memberList}}:&nbsp</label>
+								<button ng-click="addMemberRole()" type="button" class="btn btn-success">{{memberAdd}}</button>
+								<button ng-click="deleteMemberRole()" type="button" class="btn btn-success">{{memberRemove}}</button>
+							</div>
+							<div class="col-sm-6"></div>
+						</div>
+					</div>
+				</div>
+	   		</div>
+		    <div class="col-sm-2"></div>
+		    <div class="col-sm-4" style="padding-left:100px;"></div>
+		 </div>
+			<div id="" class="ibox-content">
+            	<table class="table table-striped table-bordered table-hover" id="memberListTable" >
+					<thead id ="">
+						<th></th>
+						<th>{{serialNumber}}</th>
+						<th>{{memberId}}</th>
+						<th>{{memberName}}</th>
+						<th>{{memberAccount}}</th>
+						<th>{{memberAuthority}}</th>
+					</thead>
+					<tbody id="">
+						<tr ng-repeat="member in members">
+							<td style="text-align: center;"><input class="memberList" icheck type="checkbox" ng-value="{{member.id}}" ng-model="member.selected"></td>
+							<td>{{$index + 1}}</td>
+							<td>{{member.fullId}}</td>
+							<td>{{member.name}}</td>
+							<td>{{member.loginId}}</td>
+							<td>{{member.roleAllName}}</td>
+						</tr>
+					</tbody>
+				</table>
+            </div>
+		 </div>	
+  	  </div>
+    </div>
+    
+      
+     

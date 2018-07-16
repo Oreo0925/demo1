@@ -1,0 +1,53 @@
+{
+  "deviceControl":{
+ 	 "title": "Device Control and Status",
+ 	 "serialNumber": "No.",
+ 	 "manualAuto": "Manual/Auto",
+ 	 "stopRun":"Stop/Run",
+ 	 "currentStatus":"Current Status",
+ 	 "description":"Description"
+  },
+  "role":{
+ 	 "list":"Role list",
+ 	 "serialNumber": "No.",
+ 	 "name": "Name",
+ 	 "description": "Description",
+ 	 "priority": "Priority",
+ 	 "placeHolder":"Please enter a role name."
+  },
+  "toaster": {
+    "selectOneRule": "Please select one role first!",
+    "selectOneGroup": "Please select one group first!"
+  },
+  "serialNumber": "No.",
+  "member":{
+ 	 "list":"Staff List",
+ 	 "add": "Add",
+ 	 "remove": "Remove",
+ 	 "id": "User ID.",
+ 	 "name": "User Name",
+ 	 "account": "Account Number",
+ 	 "authority": "Role Permissions"
+  },
+  "group":{
+ 	 "list":"Region list",
+ 	 "name":"Region Name",
+ 	 "location":"Location",
+ 	 "belong":"Belong to",
+ 	 "description":"Description",
+ 	 "manager":"Manager",
+ 	 "longitude":"Longitude",
+ 	 "latitude":"Latitude",
+ 	 "owner":"Owner",
+ 	 "rules":"Rules",
+ 	 "childDevNum":"Number of Subregions",
+ 	 "placeHolder":"Please enter the area name",
+ 	 "authorizeRole":"Authorize Role",
+ 	 "removeRole":"Remove Role",
+ 	 "roleList":"Role List"
+  },
+  "add":"Add",
+  "update":"Update",
+  "search":"Search",
+  "delete":"Delete"
+}

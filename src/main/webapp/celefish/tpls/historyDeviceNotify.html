@@ -1,0 +1,51 @@
+<!-- <div class="ibox float-e-margins" ng-controller="historyDeviceNotifyCtrl">
+	<div class="ibox-title">
+	    <h5>历史告警纪录</h5>
+	</div>
+	<div class="ibox-content"> -->
+		<div class="row" ng-controller="historyDeviceNotifyCtrl">
+			<table id="historyDeviceNotify" class="footable table table-hover table-stripped toggle-arrow-tiny default breakpoint footable-loaded text-center m-b-none" style="table-layout:fixed; word-wrap:break-word; word-break:break-all;" data-paging="true" data-paging-size="5">
+		        <thead>
+			        <tr>
+			            <th style="width: 33%" class="footable-sortable text-center">告警时间</th>
+			            <th style="width: 33%" class="footable-sortable text-center">告警类型/处理结果</th>
+			            <th style="width: 33%" class="footable-sortable text-center">备注</th>
+			            <!-- <th style="width: 25%" class="footable-sortable text-center">处理结果</th> -->
+			        </tr>
+		        </thead>
+		        <tbody>
+			        <tr ng-repeat="event in historyDeviceLogData | orderBy : 'checkTime'">
+			            <td>{{event.alarmTime | date : "y-MM-dd HH:mm:ss"}}</td>
+			            <td>{{event.alarmType == 1 ? '报警限1' : ''}}{{event.alarmType == 2 ? '报警限2' : ''}}</td>
+			            <td>{{event.dissolvedOxygen}}</td>
+			        </tr>
+					<!-- <tr>
+		                <td class="footable-visible footable-first-column">2018/06/28 15:28</td>
+		                <td>訊號接收不良</td>
+		                <td>0.48</td>
+		                <td><i class="fa fa-exclamation-circle text-danger"></i></td>
+					</tr>
+					<tr>
+		                <td class="footable-visible footable-first-column">2018/06/28 15:28</td>
+		                <td>訊號接收不良</td>
+		                <td>0.48</td>
+		                <td><i class="fa fa-exclamation-circle text-danger"></i></td>
+					</tr> -->
+	            </tbody>
+	            <tfoot>
+					<tr>
+						<td colspan="5">
+							<ul class="pagination pull-right"></ul>
+						</td>
+					</tr>
+				</tfoot>
+	        </table>
+    	</div>
+    <!-- </div>
+</div> -->
+
+<script>
+	$(document).ready(function() {
+		$('#historyDeviceNotify').footable();
+	});
+</script>

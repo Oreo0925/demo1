@@ -1,0 +1,66 @@
+<!-- <div class="ibox float-e-margins" ng-if="selectEvent" ng-controller="questionnaireCtrl">
+	<div class="ibox-title">
+		<h5>纪录处理</h5>
+	</div>
+	<div class="ibox-content"> -->
+		<form ng-submit="submitQuestionnaireForm()" ng-controller="questionnaireCtrl">
+			<div class="panel panel-default">
+				<div class="panel-heading">询问内容</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-12">
+							<label class="col-md-7 control-label no-padding">增氧机是否全开</label>
+							<div class="col-md-5 no-padding" ng-init="questionnaire.aeratorOpen='1'">
+								<label class="radio-inline"><input type="radio" name="aeratorOpen" ng-model="questionnaire.aeratorOpen" value="1">是</label>
+								<label class="radio-inline"><input type="radio" name="aeratorOpen" ng-model="questionnaire.aeratorOpen" value="0">否</label>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<label class="col-md-7 control-label no-padding">增氧机是否全正常</label>
+							<div class="col-md-5 no-padding" ng-init="questionnaire.aeratorNormal='1'">
+								<label class="radio-inline"><input type="radio" name="aeratorNormal" ng-model="questionnaire.aeratorNormal" value="1">是</label>
+								<label class="radio-inline"><input type="radio" name="aeratorNormal" ng-model="questionnaire.aeratorNormal" value="0">否</label>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<label class="col-md-7 control-label no-padding">水质是否异常</label>
+							<div class="col-md-5 no-padding" ng-init="questionnaire.waterQuality='1'">
+								<label class="radio-inline"><input type="radio" name="waterQuality" ng-model="questionnaire.waterQuality" value="1">是</label>
+								<label class="radio-inline"><input type="radio" name="waterQuality" ng-model="questionnaire.waterQuality" value="0">否</label>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<label class="col-md-7 control-label no-padding">近期是否用药</label>
+							<div class="col-md-5 no-padding" ng-init="questionnaire.usedDrug='1'">
+								<label class="radio-inline"><input type="radio" name="usedDrug" ng-model="questionnaire.usedDrug" value="1">是</label>
+								<label class="radio-inline"><input type="radio" name="usedDrug" ng-model="questionnaire.usedDrug" value="0">否</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">处理结果</div>
+				<div class="panel-body" ng-init="questionnaire.result='1'">
+					<div class="row">
+						<div class="col-md-6"><input type="radio" name="result" ng-model="questionnaire.result" value="1">已提醒养殖户</div>
+						<div class="col-md-6"><input type="radio" name="result" ng-model="questionnaire.result" value="2">电话未拨通、已短信通知</div>
+						<div class="col-md-6"><input type="radio" name="result" ng-model="questionnaire.result" value="3">设备异常</div>
+						<div class="col-md-6"><input type="radio" name="result" ng-model="questionnaire.result" value="4">需检测水质</div>
+						<div class="col-md-12"><input type="radio" name="result" ng-model="questionnaire.result" value="5">暂无需处理 (必须填写备注)</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">备注</div>
+				<div class="panel-body">
+					<textarea class="form-control" rows="3" ng-model="questionnaire.memo" placeholder="{养殖户}{鱼塘名称}{告警类型}{告警时间}{告警内容}{处理结果}" style="resize: none;"></textarea>
+				</div>
+			</div>
+			<label class="checkbox-inline"><input type="checkbox" ng-model="questionnaire.informManager" ng-init="questionnaire.informManager=true">通知养殖管家</label>
+			<button type="button" class="btn btn-default" ng-click="submitQuestionnaireForm(1)">结束</button>
+			<button type="button" class="btn btn-default" ng-click="submitQuestionnaireForm(3)">稍后再拨</button>
+			<button type="button" class="btn btn-default" ng-click="submitQuestionnaireForm(2)">维修派单并结束</button>
+		</form>
+	<!-- </div>
+</div> -->
